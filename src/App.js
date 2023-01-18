@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route,Routes } from "react-router-dom";
+import AddClient from "./Components/AdminComponent/AddClient";
+import AddMedecin from "./Components/AdminComponent/AddMedecin";
+import AddResulta from "./Components/AdminComponent/AddResulta";
+import AddTest from "./Components/AdminComponent/AddTest";
+import AllClient from "./Components/AdminComponent/AllClient";
+import AllMedecin from "./Components/AdminComponent/AllMedecin";
+import AllResulta from "./Components/AdminComponent/AllResulta";
+import AllTest from "./Components/AdminComponent/AllTest";
+import Home from "./Pages/Admin/Home";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+            <Routes>
+                  <Route path="/" element={<Home/>}>
+                           <Route path="addClient" element={<AddClient/>}/>
+                           <Route path="allClient" element={<AllClient/>}/> 
+                           <Route path="addTest" element={<AddTest/>}/>   
+                           <Route path="allTest" element={<AllTest/>}/>  
+                           <Route path="allMedecin" element={<AllMedecin/>}/>  
+                           <Route path="addMedecin" element={<AddMedecin/>}/>  
+                           <Route path="addResulta" element={<AddResulta/>}/>  
+                           <Route path="allResulta" element={<AllResulta/>}/>  
+                  </Route>
+                  <Route path="/login" element={<Login/>}/>
+                  <Route path="/register" element={<Register/>}/>
+                  <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
+            </Routes>
   );
 }
 
